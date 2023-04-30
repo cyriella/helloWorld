@@ -64,12 +64,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
             <formatter type="xml"/>
 
             <batchtest fork="yes" todir="${report.dir}">
-                <fileset dir="${basedir}" includes="**/*Test.java"/>
+                <fileset dir="${src.dir}" includes="**/*Test.java"/>
             </batchtest>
         </junit>
     </target>
 
-    <target name="junitreport">
+    <target name="junitreport" >
         <junitreport todir="${report.dir}">
             <fileset dir="${report.dir}" includes="TEST-*.xml"/>
             <report todir="${report.dir}"/>
