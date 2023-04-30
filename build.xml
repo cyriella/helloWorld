@@ -78,8 +78,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 
     <target name="clean-build" depends="clean,jar"/>
 
-    <target name="main" depends="clean,run"/>
-
-
+    <target name="main" depends="clean,run, junit, junitreport"/>
 </project>
 
