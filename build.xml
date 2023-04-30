@@ -6,14 +6,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 
 <project name="Helloworld" basedir="." default="main">
 
+
+    <property name="src.dir"   value="src"/>
     <property name="build.dir"   value="build"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
     <property name="jar.dir"     value="${build.dir}/jar"/>
     <property name="lib.dir"     value="lib"/>
     
-    <property name="main-class"  value="Helloworld"/>
+    <property name="main-class"  value="com.Helloworld"/>
 
-        <path id="classpath">
+    <path id="classpath">
         <fileset dir="${lib.dir}" includes="**/*.jar"/>
     </path>
 
@@ -23,9 +25,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
 
     <target name="compile">
         <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${basedir}" destdir="${classes.dir}" classpathref="classpath" includeantruntime="false"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" includeantruntime="false"/>
         <copy todir="${classes.dir}">
-            <fileset dir="${basedir}" excludes="**/*.java"/>
+            <fileset dir="${src.dir}" excludes="**/*.java"/>
         </copy>
     </target>
 
@@ -73,6 +75,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
             <report todir="${report.dir}"/>
         </junitreport>
     </target>
+
+    <target name="clean-build" depends="clean,jar"/>
+
+    <target name="main" depends="clean,run"/>
 
 
 </project>

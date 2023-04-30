@@ -27,6 +27,14 @@ public class HelloworldTest {
         // Rétablir la sortie standard
         System.setOut(System.out);
     }
+    @Test
+    public void testNothing() {
+    }
+
+    @Test
+    public void testWillAlwaysFail() {
+        fail("An error message");
+    }
 
     @Test
     public void testMain() {
