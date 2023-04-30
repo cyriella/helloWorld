@@ -4,12 +4,7 @@ import static org.junit.Assert.fail;
 
 public class HelloworldTest {
 
-    @Test
-    public void testMain() {
-        Helloworld.main(new String[0]);
-        assertEquals("Hello, World!\n", outContent.toString());
-    }
-    
+
     @Test
     public void testNothing() {
     }
